@@ -5,8 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontakt | Salon Provence</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/kmg2onn.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
+    <!-- Glassmorphism/Animated Background Elements -->
+    <div class="glass-element glass-element-1"></div>
+    <div class="glass-element glass-element-2"></div>
+    <div class="glass-element glass-element-3"></div>
+    <div class="cursor"></div>
+    <div class="particles"></div>
+    <div class="decorative-lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
     <header>
         <nav>
             <a href="index.html" class="logo">Salon Provence</a>
@@ -25,16 +40,45 @@
     </header>
     <main>
         <section class="contact fade-in">
-            <h2>Kontakt</h2>
-            <div class="contact-details">
-                <p><strong>Adresa:</strong> Jeronýmova 738, 440 01 Louny</p>
-                <p><strong>Telefon:</strong> <a href="tel:+420735055008">+420 735 055 008</a></p>
-                <p><strong>Email:</strong> <a href="mailto:salonprovence@email.cz">salonprovence@email.cz</a></p>
-                <p><strong>Otevírací doba:</strong> Po - Ne dle přání klienta</p>
-            </div>
-            <div class="contact-cta">
-                <a href="tel:+420735055008" class="cta-button">Zavolat nyní</a>
-                <a href="mailto:salonprovence@email.cz" class="cta-button">Napsat email</a>
+            <h2 class="section-title">Kontakt</h2>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-details">
+                        <h3>Kontaktní informace</h3>
+                        <hr class="section-divider">
+                        <p><strong>Adresa:</strong><br>Jeronýmova 738, 440 01 Louny</p>
+                        <br>
+                        <p><strong>Telefon:</strong><br><a href="tel:+420735055008">+420 735 055 008</a></p>
+                        <br>
+                        <p><strong>Email:</strong><br><a href="mailto:salonprovence@email.cz">salonprovence@email.cz</a></p>
+                        <br>
+                        <p><strong>Otevírací doba:</strong><br>Po - Ne dle přání klienta</p>
+                    </div>
+                    
+                    <div class="contact-cta">
+                        <a href="tel:+420735055008" class="cta-button">Zavolat nyní</a>
+                        <a href="mailto:salonprovence@email.cz" class="cta-button">Napsat email</a>
+                        <a href="https://salon-provence.snippet.myfox.cz/form/show/date_2025-07-01/shopId_ck9mhy71ha13i0b835qe3zm6w/lng_cs" class="cta-button" target="_blank" rel="noopener">Rezervace online</a>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <h3>Kde nás najdete</h3>
+                    <hr class="section-divider">
+                    <div class="map-wrapper">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2583.123456789!2d13.7969444!3d50.3575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470a1c5c5c5c5c5c%3A0x1234567890abcdef!2sJeron%C3%BDmova%20738%2C%20440%2001%20Louny!5e0!3m2!1scs!2scz!4v1640995200000!5m2!1scs!2scz"
+                            width="100%" 
+                            height="350" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Mapa - Salon Provence, Jeronýmova 738, Louny">
+                        </iframe>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -62,27 +106,25 @@
                     <strong>KONTAKTNÍ INFORMACE:</strong><br>
                     Petra Jakešová<br>
                     Jeronýmova 738, 440 01 Louny<br>
-                    Mobil: <a href="tel:+420735055008">+420 735 055 008</a><br>
-                    Email: <a href="mailto:salonprovence@email.cz">salonprovence@email.cz</a>
+                    Mobil: <span class="footer-link">+420 735 055 008</span><br>
+                    Email: <span class="footer-link">salonprovence@email.cz</span>
                 </div>
                 <div>
                     <strong>OTEVÍRACÍ DOBA:</strong><br>
                     Po - Ne: dle přání klienta<br><br>
-                    <a href="#">Instagram</a>&nbsp;&nbsp;
-                    <a href="#">Facebook</a>
                 </div>
             </div>
             <div class="footer-divider"></div>
             <div class="footer-bottom">
                 <div class="footer-left">
-                    Web vytvořila Petra Helebrantová
+                    Web vytvořila <span class="footer-link">Petra Helebrantová</span>
                 </div>
                 <div class="footer-center">
                     © Salon Provence
                 </div>
                 <div class="footer-right">
-                    <a href="#">Instagram</a>
-                    <a href="#">Facebook</a>
+                    <span class="footer-link">Instagram</span>
+                    <span class="footer-link">Facebook</span>
                 </div>
             </div>
         </div>
