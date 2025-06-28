@@ -541,11 +541,3 @@ footer {
     .nav-menu.active { left: 0; }
 }
 
-::-webkit-scrollbar {
-    width: 8px;
-    background: var(--white);
-}
-::-webkit-scrollbar-thumb {
-    background: var(--lavender);
-    border-radius: 8px;
-}
