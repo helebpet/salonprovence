@@ -210,6 +210,7 @@ section {
     background: var(--white);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    position: relative;
 }
 .section-title {
     color: var(--accent-dark);
@@ -218,6 +219,117 @@ section {
     margin-bottom: 2.2rem;
     font-family: 'Playfair Display', serif;
     letter-spacing: 0.04em;
+}
+
+/* --- Decorative/Glass Animations Integration --- */
+
+/* Background Animation */
+body {
+    background:
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.10) 0%, transparent 60%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.10) 0%, transparent 60%),
+        radial-gradient(circle at 40% 40%, rgba(120, 200, 255, 0.07) 0%, transparent 60%),
+        var(--primary-bg, #fbf8f4);
+}
+.particles {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+}
+.particle {
+    position: absolute;
+    background: #d4af37;
+    border-radius: 50%;
+    animation: float 15s infinite linear;
+    opacity: 0.10;
+}
+@keyframes float {
+    0% {transform: translateY(100vh) rotate(0deg); opacity: 0;}
+    10%, 90% {opacity: 0.12;}
+    100% {transform: translateY(-100px) rotate(360deg); opacity: 0;}
+}
+
+/* Decorative Glass Elements */
+.glass-element {
+    position: absolute;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px) saturate(1.2);
+    -webkit-backdrop-filter: blur(15px) saturate(1.2);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    transition: all 0.5s cubic-bezier(.4,0,.2,1);
+    z-index: 3;
+}
+.glass-element-1 {top: 18%; left: 6%; width: 110px; height: 110px; animation: float-glass 7s ease-in-out infinite;}
+.glass-element-2 {bottom: 18%; right: 6%; width: 80px; height: 80px; animation: float-glass 9s ease-in-out infinite reverse;}
+.glass-element-3 {top: 58%; left: 8%; width: 60px; height: 60px; animation: float-glass 8s ease-in-out infinite; animation-delay: 2s;}
+@keyframes float-glass {
+    0%,100% {transform: translateY(0px) rotate(0deg); opacity: 0.3;}
+    50% {transform: translateY(-16px) rotate(4deg); opacity: 0.55;}
+}
+
+/* Decorative Lines */
+.decorative-lines {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 2;
+}
+.line {
+    position: absolute;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+    height: 1px;
+    width: 200px;
+    animation: slide 4s ease-in-out infinite;
+    opacity: 0.2;
+}
+.line:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s;}
+.line:nth-child(2) { top: 60%; right: 10%; animation-delay: 2s;}
+.line:nth-child(3) { top: 80%; left: 30%; animation-delay: 1s;}
+@keyframes slide {
+    0%,100% {opacity: 0; transform: translateX(-50px);}
+    50% {opacity: 0.3; transform: translateX(50px);}
+}
+
+/* Custom Cursor */
+.cursor {
+    position: fixed;
+    width: 20px; height: 20px;
+    background: radial-gradient(circle, #d4af37, #ffd700);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    mix-blend-mode: difference;
+    transition: transform 0.1s cubic-bezier(.4,0,.2,1);
+}
+.cursor-trail {
+    position: fixed;
+    width: 4px; height: 4px;
+    background: #d4af37;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+@media (max-width: 700px) {
+    .cursor, .cursor-trail { display: none !important; }
+    body { cursor: auto !important; }
+}
+
+/* Smooth fade-in-up on entrance */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s cubic-bezier(.4,0,.2,1) forwards;
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px);}
+    to { opacity: 1; transform: none;}
 }
 
 /* Service List Modern Cards */
@@ -540,4 +652,3 @@ footer {
     }
     .nav-menu.active { left: 0; }
 }
-
